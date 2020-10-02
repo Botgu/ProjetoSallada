@@ -1,0 +1,55 @@
+.rowFoto{
+    margin: 0px auto;
+}
+
+.detalhesConteudo{
+    display: grid;
+    margin: 50px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.conteudoSobre{
+    padding: 80px 90px 50px 90px;
+    border: 1px solid #000;
+}
+
+.nomePreco{
+   font-size: 20px;
+   margin-bottom: 20px;
+}
+
+.sobre{
+ margin-bottom: 25px;
+}
+
+.nomePais{
+    padding-top: 20px;
+}
+.nomePais h3{
+    margin: 15px 0px 10px 0px;
+}
+.iconBandeira{
+    vertical-align: middle;
+    padding-right: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+.detalhesConteudo{
+    display: grid;
+    margin: 50px;
+	grid-template-columns: 1fr;
+}
+.rowFoto{
+    margin: 0px auto;
+    margin-bottom: 40px;
+}
+}
+
+
+.footer{
+    background: #771248;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Ubuntu';
+}

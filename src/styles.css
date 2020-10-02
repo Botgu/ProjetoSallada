@@ -1,0 +1,89 @@
+body{
+    margin: 0px;
+    font-family: 'Ubuntu';
+}
+
+a {
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+    padding:0 20px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+img {
+    margin: 0 auto;
+}
+
+.menu{
+    background: #771248;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Ubuntu';
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000000aa;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerProd{
+ border: 1px solid rgba(138, 7, 77, .5);
+ padding-top: 25px;
+ padding-left: 30px;
+ padding-right: 30px;
+ box-shadow: 0px 0px 2px #000000aa;
+ height: 350px;
+ max-width: 196px;
+ display: grid;
+ grid-template-rows: 9fr 1fr 2fr;
+}
+
+
+.detalheButton{
+    background: #8a074d;
+    padding: 10px 25px;
+    color: white;
+    box-shadow: 0px 0px 10px #000000aa;
+}
+
+.detalheButton:hover{
+    background: #68053a;
+    cursor: pointer;
+}
+
+/*RESPONSIVO*/
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 380px);
+        text-align: center;
+        justify-content: center;
+        align-items: center
+        
+    }
+    }
+
+
+@media only screen and (max-width: 700px) {
+.container {
+    display: grid;
+    grid-template-columns: 380px;
+    text-align: center;
+    justify-content: center;
+    align-items: center
+    
+}
+}
