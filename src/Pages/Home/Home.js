@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   async function handleDetails(e) {
-    history.push(`/details/?${e}`)
+    history.push(`/details/${e}`)
   }
 
   return (
