@@ -23,14 +23,31 @@
 }
 
 .nomePais{
-    padding-top: 20px;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.nomePais h3{
-    margin: 15px 0px 10px 0px;
+
+.nomePais h4{
+    margin: 15px 0px 5px 0px;
 }
-.iconBandeira{
+
+.nomePais span{
+    font-size: 14px;
+}
+
+.iconDetail{
     vertical-align: middle;
-    padding-right: 30px;
+}
+
+
+.buyButton{
+    margin-top: 30px;
+    background: #771248;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    color: #fff;
 }
 
 @media only screen and (max-width: 800px) {
@@ -44,7 +61,6 @@
     margin-bottom: 40px;
 }
 }
-
 
 .footer{
     background: #771248;
