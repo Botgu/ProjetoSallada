@@ -9,13 +9,19 @@ import Termometer from "../../assets/thermometer.svg";
 import Restaurant from "../../assets/restaurant.svg";
 
 const ProductDetails = ({ details }) => {
-  const { images, name, aboutThisWine, countries, type, bundleProducts } = details;
+  const {
+    images,
+    name,
+    aboutThisWine,
+    countries,
+    type,
+    bundleProducts,
+  } = details;
 
   const alcoholContent = bundleProducts[0]?.alcoholContent;
   const grapeList = bundleProducts[0]?.grapeList;
   const servingTemperature = bundleProducts[0]?.servingTemperature;
   const pairing = bundleProducts[0]?.pairing;
-
 
   return (
     <Container>
@@ -26,7 +32,7 @@ const ProductDetails = ({ details }) => {
         <p>{name}</p>
         <p>Sobre: {aboutThisWine}</p>
         <iconDetails>
-        <span>Produtor</span>
+          <span>Produtor</span>
           <img
             src={countries[0].icon}
             alt={`Icone bandeira ${countries[0].name}`}
@@ -35,27 +41,18 @@ const ProductDetails = ({ details }) => {
         </iconDetails>
         <iconDetails>
           <span>Tipo</span>
-        <img
-            src={WineBottle}
-            alt="Tipo"
-          />
+          <img src={WineBottle} alt="Tipo" />
           <p>{type}</p>
         </iconDetails>
         <iconDetails>
           <span>Teor alcoólico</span>
-        <img
-            src={Cone}
-            alt="Porcentagem Alcool"
-          />
-        <p>{alcoholContent}</p>
+          <img src={Cone} alt="Porcentagem Alcool" />
+          <p>{alcoholContent}</p>
         </iconDetails>
         <iconDetails>
           <span>Uvas</span>
-        <img
-            src={Grape}
-            alt="Uvas"
-          />
-        <p>{grapeList}</p>
+          <img src={Grape} alt="Uvas" />
+          <p>{grapeList}</p>
         </iconDetails>
         <p>{servingTemperature}</p>
         <p>{pairing}</p>
