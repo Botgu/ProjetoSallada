@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
 
-import { Container, ProductImage, ProductDetail, ContentDetails, Aboutcontainer, BackButton } from "./styles";
+import { Container, ProductImage, ProductDetail, ContentDetails, Aboutcontainer, BackButton, IconDetails } from "./styles";
 
 import WineBottle from "../../assets/wine-bottle.svg";
 import Cone from "../../assets/cone.svg";
@@ -41,39 +41,39 @@ const ProductDetails = ({ details }) => {
           <p>Sobre: {aboutThisWine}</p>
         </Aboutcontainer>
         <ProductDetail>
-          <iconDetails>
+          <IconDetails>
             <p>Produtor</p>
             <img
               src={countries[0].icon}
               alt={`Icone bandeira ${countries[0].name}`}
             />
             <span>{countries[0].name}</span>
-          </iconDetails>
-          <iconDetails>
+          </IconDetails>
+          <IconDetails>
             <p>Tipo</p>
             <img src={WineBottle} alt="Tipo" />
             <span>{type}</span>
-          </iconDetails>
-          <iconDetails>
+          </IconDetails>
+          <IconDetails>
             <p>Teor alcoólico</p>
             <img src={Cone} alt="Porcentagem Alcool" />
             <span>{alcoholContent}</span>
-          </iconDetails>
-          <iconDetails>
+          </IconDetails>
+          <IconDetails>
             <p>Uvas</p>
             <img src={Grape} alt="Uvas" />
             <span>{grapeList}</span>
-          </iconDetails>
-          <iconDetails>
+          </IconDetails>
+          <IconDetails>
             <p>Servir</p>
             <img src={Termometer} alt="Termometro" />
             <span>{servingTemperature}</span>
-          </iconDetails>
-          <iconDetails>
+          </IconDetails>
+          <IconDetails>
             <p>Combina com</p>
             <img src={Restaurant} alt="Garfo e faca" />
             <span>{pairing}</span>
-          </iconDetails>
+          </IconDetails>
         </ProductDetail>
         <BackButton onClick={handleHome}>voltar</BackButton>
       </ContentDetails>

@@ -87,3 +87,10 @@ export const BackButton = styled.a`
         cursor: pointer;
     }
 `;
+
+export const IconDetails = styled.div`
+    span{
+        font-size:14px;
+        padding-left:10px;
+    }
+`;
