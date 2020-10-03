@@ -13,7 +13,7 @@ export default function NotFound() {
 
     return (
         <Container>
-            <img src={spilledWine} ></img>
+            <img src={spilledWine} alt="Vinho derramando" ></img>
             <Title>404</Title>
             <Text>Página não encontrada</Text>
             <Button onClick={handleHome}>

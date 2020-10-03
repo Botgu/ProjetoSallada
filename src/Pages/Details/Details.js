@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import api from '../../api.js';
 import '../../styles.css';
 import './details.css';
-import { Button } from './styles';
+import { DetailButton, RowFoto } from './styles';
 import WineBottle from '../../assets/wine-bottle.svg';
 import Cone from '../../assets/cone.svg';
 import Grape from '../../assets/grape.svg';
 import Termometer from '../../assets/thermometer.svg';
 import Restaurant from '../../assets/restaurant.svg';
 import Menu from "../../components/Menu/Menu.js";
+import Footer from "../../components/Footer/Footer.js";
 
 export default function Details() {
 
@@ -25,15 +26,22 @@ export default function Details() {
         loadDetail();
     }, [id]);
 
+
+    const history = useHistory();
+    async function handleHome() {
+        history.push('/');
+    }
+
+
     return (
         <div>
             {detalhe &&
                 <div>
                     <Menu title="Detalhes Produto"></Menu>
                     <div className="detalhesConteudo">
-                        <div className="rowFoto">
-                            <img src={detalhe.images.large} width="280px" alt="Vinho" />
-                        </div>
+                        <RowFoto>
+                            <img src={detalhe.images.large} alt="Vinho" />
+                        </RowFoto>
                         <div className="conteudoSobre">
                             <div className="nomePreco">
                                 <strong>{detalhe.name} </strong>
@@ -55,7 +63,7 @@ export default function Details() {
                                     <div>
                                         <h4>Teor alcoólico</h4>
                                         <img className="iconDetail" src={Cone} width="20px" alt="Funil" />
-                                        <span> {detalhe.bundleProducts[0]?.alcoholContent} </span>
+                                        <span> {detalhe.bundleProducts[0]?.alcoholContent}</span>
                                     </div>
                                     <div>
                                         <h4>Uvas</h4>
@@ -73,15 +81,11 @@ export default function Details() {
                                         <span> {detalhe.bundleProducts[0]?.pairing} </span>
                                     </div>
                                 </div>
-                                <Button>
-                                    <h4>COMPRAR</h4>
-                                </Button>
+                                <DetailButton onClick={handleHome} > Voltar </DetailButton>
                             </div>
                         </div>
                     </div>
-                    <div className="footer">
-                        <h1>Para mais informações entre em contato!</h1>
-                    </div>
+                    <Footer title="Para mais informações entre em contato! tel:9999-9999"></Footer>
                 </div>
             }
         </div >

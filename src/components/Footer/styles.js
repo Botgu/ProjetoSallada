@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
-export const Header = styled.nav`
+export const Rodape = styled.footer`
   background: #771248;
   text-align: center;
   padding: 10px;
   font-family: 'Ubuntu';
-  margin-bottom: 30px;
-  border-bottom: 2px solid #000000aa;
-  min-height: 100px;
+  margin-top: 30px;
 `;
 
-export const HeaderTitle = styled.h1`
+export const FooterTitle = styled.h1`
   color: white;
   font-family: 'Ubuntu';
+  font-size: 1em;
 `;

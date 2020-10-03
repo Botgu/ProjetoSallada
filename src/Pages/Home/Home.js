@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
 import { Link } from "react-router-dom";
-
 import { Container } from "./styles";
 
 import Menu from "../../components/Menu/Menu";
 import Product from "../../components/Product/Product";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -33,6 +33,7 @@ const Home = () => {
           </Product>
         ))}
       </Container>
+      <Footer title="Para mais informações entre em contato! tel:9999-9999"></Footer>
     </>
   );
 };

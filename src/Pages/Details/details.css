@@ -1,11 +1,12 @@
-.rowFoto{
+/* .rowFoto{
     margin: 0px auto;
-}
+} */
 
 .detalhesConteudo{
     display: grid;
     margin: 50px;
-	grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
 }
 
 .conteudoSobre{
