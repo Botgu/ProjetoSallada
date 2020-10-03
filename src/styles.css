@@ -1,26 +1,27 @@
-body{
-    margin: 0px;
-    font-family: 'Ubuntu';
+body {
+  margin: 0px;
+  font-family: "Ubuntu";
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-ol, ul {
-    list-style: none;
-    padding:0 20px;
+ol,
+ul {
+  list-style: none;
+  padding: 0 20px;
 }
 
 h4 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 img {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
-.containerProd{
+/* .containerProd{
  border: 1px solid rgba(138, 7, 77, .5);
  padding-top: 25px;
  padding-left: 30px;
@@ -30,41 +31,38 @@ img {
  max-width: 196px;
  display: grid;
  grid-template-rows: 9fr 1fr 2fr;
+} */
+
+.detalheButton {
+  background: #8a074d;
+  padding: 10px 25px;
+  color: white;
+  box-shadow: 0px 0px 10px #000000aa;
 }
 
-.detalheButton{
-    background: #8a074d;
-    padding: 10px 25px;
-    color: white;
-    box-shadow: 0px 0px 10px #000000aa;
-}
-
-.detalheButton:hover{
-    background: #68053a;
-    cursor: pointer;
+.detalheButton:hover {
+  background: #68053a;
+  cursor: pointer;
 }
 
 /*RESPONSIVO*/
 
 @media only screen and (max-width: 1200px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(2, 380px);
-        text-align: center;
-        justify-content: center;
-        align-items: center
-        
-    }
-    }
-
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @media only screen and (max-width: 700px) {
-.container {
+  .container {
     display: grid;
     grid-template-columns: 380px;
     text-align: center;
     justify-content: center;
-    align-items: center
-    
-}
+    align-items: center;
+  }
 }
