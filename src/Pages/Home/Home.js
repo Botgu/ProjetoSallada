@@ -1,0 +1,40 @@
+import React, { useEffect, useState } from "react";
+import api from "../../api";
+import { Link } from "react-router-dom";
+
+import { Container } from "./styles";
+
+import Menu from "../../components/Menu/Menu";
+import Product from "../../components/Product/Product";
+
+const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function loadProducts() {
+      const productList = await api.get("product");
+      setProducts(productList.data.data.products);
+    }
+
+    loadProducts();
+  }, []);
+
+  return (
+    <>
+      <Menu title="Lista de produtos"></Menu>
+      <Container>
+        {products.map((product) => (
+          <Product
+            key={product.sku}
+            image_url={product.images.medium}
+            name={product.name}
+          >
+            <Link to={`/details/${product.url}`}>Detalhes</Link>
+          </Product>
+        ))}
+      </Container>
+    </>
+  );
+};
+
+export default Home;
