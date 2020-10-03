@@ -20,24 +20,6 @@ img {
     margin: 0 auto;
 }
 
-.menu{
-    background: #771248;
-    text-align: center;
-    padding: 10px;
-    color: white;
-    font-family: 'Ubuntu';
-    margin-bottom: 20px;
-    border-bottom: 2px solid #000000aa;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
 .containerProd{
  border: 1px solid rgba(138, 7, 77, .5);
  padding-top: 25px;
@@ -49,7 +31,6 @@ img {
  display: grid;
  grid-template-rows: 9fr 1fr 2fr;
 }
-
 
 .detalheButton{
     background: #8a074d;

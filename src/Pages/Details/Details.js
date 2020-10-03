@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import api from '../api.js';
 import '../styles.css';
 import './details.css';
@@ -9,20 +10,20 @@ import Termometer from '../assets/thermometer.svg';
 import Restaurant from '../assets/restaurant.svg';
 
 export default function Details() {
-    const url = window.location.href;
-    const arrayOfStrings = url.split('?');
-    const [detalhe = null, setDetalhe] = useState(null);
+    //const url = window.location.href;
+    //const arrayOfStrings = url.split('?');
+
+    const [detalhe, setDetalhe] = useState();
+    const { id } = useParams();
 
     useEffect(() => {
-        if (detalhe == null) {
-            async function loadDetail() {
-                await api.get(`product/${arrayOfStrings[1]}`).then(res => {
-                    setDetalhe(res.data.data);
-                })
-            }
-            loadDetail();
+        async function loadDetail() {
+            const response = await api.get(`product/${id}`)
+            setDetalhe(response.data.data);
         }
-    })
+
+        loadDetail();
+    }, []);
 
     return (
         <div>
@@ -45,8 +46,8 @@ export default function Details() {
                                 <div className="nomePais">
                                     <div>
                                         <h4>Produtor</h4>
-                                        <span> {detalhe.countries[0].name}: </span>
-                                        <img className="iconDetail" src={detalhe.countries[0].icon} width="20px"  alt="Bandeira"  />
+                                        <img className="iconDetail" src={detalhe.countries[0].icon} width="20px" alt="Bandeira" />
+                                        <span> {detalhe.countries[0].name} </span>
                                     </div>
                                     <div>
                                         <h4>Tipo</h4>
