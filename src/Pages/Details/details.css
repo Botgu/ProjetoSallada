@@ -1,6 +1,6 @@
-/* .rowFoto{
+/*  .rowFoto{
     margin: 0px auto;
-} */
+}
 
 .detalhesConteudo{
     display: grid;
@@ -39,6 +39,7 @@
 
 .iconDetail{
     vertical-align: middle;
+    display: block;
 }
 
 
@@ -69,4 +70,4 @@
     padding: 10px;
     color: white;
     font-family: 'Ubuntu';
-}
+} */

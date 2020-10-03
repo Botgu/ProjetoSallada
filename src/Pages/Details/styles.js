@@ -8,7 +8,6 @@ export const RowFoto = styled.div`
       }
 `;
 
-
 export const DetailButton = styled.a`
     background: #8a074d;
     font-size: 1em;
