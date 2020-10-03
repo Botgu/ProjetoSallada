@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import api from '../../api.js';
 import '../../styles.css';
 import './details.css';
+import { Button } from './styles';
 import WineBottle from '../../assets/wine-bottle.svg';
 import Cone from '../../assets/cone.svg';
 import Grape from '../../assets/grape.svg';
@@ -22,7 +23,7 @@ export default function Details() {
         }
 
         loadDetail();
-    }, []);
+    }, [id]);
 
     return (
         <div>
@@ -44,7 +45,7 @@ export default function Details() {
                                     <div>
                                         <h4>Produtor</h4>
                                         <img className="iconDetail" src={detalhe.countries[0].icon} width="20px" alt="Bandeira" />
-                                        <span> {detalhe.countries[0].name} </span>
+                                        <span> {detalhe.countries[0]?.name} </span>
                                     </div>
                                     <div>
                                         <h4>Tipo</h4>
@@ -54,27 +55,27 @@ export default function Details() {
                                     <div>
                                         <h4>Teor alcoólico</h4>
                                         <img className="iconDetail" src={Cone} width="20px" alt="Funil" />
-                                        <span> {detalhe.bundleProducts[0].alcoholContent} </span>
+                                        <span> {detalhe.bundleProducts[0]?.alcoholContent} </span>
                                     </div>
                                     <div>
                                         <h4>Uvas</h4>
                                         <img className="iconDetail" src={Grape} width="20px" alt="Uva" />
-                                        <span> {detalhe.bundleProducts[0].grapeList} </span>
+                                        <span> {detalhe.bundleProducts[0]?.grapeList} </span>
                                     </div>
                                     <div>
                                         <h4>Servir</h4>
                                         <img className="iconDetail" src={Termometer} width="20px" alt="Termometro" />
-                                        <span> {detalhe.bundleProducts[0].servingTemperature} </span>
+                                        <span> {detalhe.bundleProducts[0]?.servingTemperature} </span>
                                     </div>
                                     <div>
                                         <h4>Combina:</h4>
                                         <img className="iconDetail" src={Restaurant} width="20px" alt="Garfo e faca" />
-                                        <span> {detalhe.bundleProducts[0].pairing} </span>
+                                        <span> {detalhe.bundleProducts[0]?.pairing} </span>
                                     </div>
                                 </div>
-                                <div className="buyButton">
-                                    <a>COMPRAR</a>
-                                </div>
+                                <Button>
+                                    <h4>COMPRAR</h4>
+                                </Button>
                             </div>
                         </div>
                     </div>
