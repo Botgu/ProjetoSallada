@@ -25,6 +25,7 @@ export const Container = styled.div`
       align-items: center;
   }
 
+  /*MUDAR O BOTÂO*/
   a {
     background: #8a074d;
     font-size: 1em;
@@ -38,4 +39,18 @@ export const Container = styled.div`
         cursor: pointer;
     }
   }
+`;
+
+export const Link = styled.a`
+      background: #8a074d;
+    font-size: 1em;
+    margin: 0.50em auto;
+    padding: 0.5em 1em;
+    color: white;
+    box-shadow: 0px 0px 10px #000000aa;
+    
+    &:hover{
+        background: #68053a;
+        cursor: pointer;
+    }
 `;

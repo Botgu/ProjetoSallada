@@ -1,6 +1,7 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 
-import { Container, ProductImage, ProductDetail, Wapper } from "./styles";
+import { Container, ProductImage, ProductDetail, ContentDetails, Aboutcontainer, BackButton } from "./styles";
 
 import WineBottle from "../../assets/wine-bottle.svg";
 import Cone from "../../assets/cone.svg";
@@ -9,75 +10,73 @@ import Termometer from "../../assets/thermometer.svg";
 import Restaurant from "../../assets/restaurant.svg";
 
 const ProductDetails = ({ details }) => {
-  const { images, name, aboutThisWine, countries, type, bundleProducts } = details;
+  const {
+    images,
+    name,
+    aboutThisWine,
+    countries,
+    type,
+    bundleProducts,
+  } = details;
+
+  const history = useHistory();
+
+  async function handleHome() {
+      history.push('/');
+  }
 
   const alcoholContent = bundleProducts[0]?.alcoholContent;
   const grapeList = bundleProducts[0]?.grapeList;
   const servingTemperature = bundleProducts[0]?.servingTemperature;
   const pairing = bundleProducts[0]?.pairing;
 
-
   return (
     <Container>
       <ProductImage>
         <img src={images.large} alt={`Foto de ${name}`} />
       </ProductImage>
-      <Wapper>
-        <nameAbout>
-          <p>{name}</p>
+      <ContentDetails>
+        <p>{name}</p>
+        <Aboutcontainer>
           <p>Sobre: {aboutThisWine}</p>
-        </nameAbout>
+        </Aboutcontainer>
         <ProductDetail>
           <iconDetails>
-            <span>Produtor</span>
+            <p>Produtor</p>
             <img
               src={countries[0].icon}
               alt={`Icone bandeira ${countries[0].name}`}
             />
-            <p>{countries[0].name}</p>
+            <span>{countries[0].name}</span>
           </iconDetails>
           <iconDetails>
-            <span>Tipo</span>
-            <img
-              src={WineBottle}
-              alt="Tipo"
-            />
-            <p>{type}</p>
+            <p>Tipo</p>
+            <img src={WineBottle} alt="Tipo" />
+            <span>{type}</span>
           </iconDetails>
           <iconDetails>
-            <span>Teor alcoólico</span>
-            <img
-              src={Cone}
-              alt="Porcentagem Alcool"
-            />
-            <p>{alcoholContent}</p>
+            <p>Teor alcoólico</p>
+            <img src={Cone} alt="Porcentagem Alcool" />
+            <span>{alcoholContent}</span>
           </iconDetails>
           <iconDetails>
-            <span>Uvas</span>
-            <img
-              src={Grape}
-              alt="Uvas"
-            />
-            <p>{grapeList}</p>
+            <p>Uvas</p>
+            <img src={Grape} alt="Uvas" />
+            <span>{grapeList}</span>
           </iconDetails>
           <iconDetails>
-            <span>Servir</span>
-            <img
-              src={Termometer}
-              alt="Termometro"
-            />
-            <p>{servingTemperature}</p>
+            <p>Servir</p>
+            <img src={Termometer} alt="Termometro" />
+            <span>{servingTemperature}</span>
           </iconDetails>
           <iconDetails>
-            <span>Combina</span>
-            <img
-              src={Restaurant}
-              alt="Garfo e faca"
-            />
-            <p>{pairing}</p>
+            <p>Combina com</p>
+            <img src={Restaurant} alt="Garfo e faca" />
+            <span>{pairing}</span>
           </iconDetails>
         </ProductDetail>
-      </Wapper>
+        <BackButton onClick={handleHome}>voltar</BackButton>
+      </ContentDetails>
     </Container>
   );
 };
